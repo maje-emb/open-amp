@@ -22,5 +22,8 @@ set(WITH_PROXY OFF CACHE BOOL "" FORCE)
 set(LIBMETAL_INCLUDE_DIR ${ZEPHYR_BINARY_DIR}/ext/hal/libmetal/lib/include)
 set(LIBMETAL_LIB ${ZEPHYR_BINARY_DIR}/ext/hal/libmetal/lib)
 
+set(RPMSG_BUFFER_SIZE CONFIG_OPENAMP_RPMSG_BUFFER_SIZE)
+zephyr_compile_definitions(RPMSG_BUFFER_SIZE=CONFIG_OPENAMP_RPMSG_BUFFER_SIZE)
+
 add_subdirectory(${CONFIG_OPENAMP_SRC_PATH} open-amp)
 endif()
